@@ -123,13 +123,5 @@ The dataset used for this project is sourced from **Kaggle** and simulates real-
 
 ---
 
-## 7. Results  
-1. **Best Destinations by Budget:**  
-   - Identified affordable travel destinations based on average prices for flights and hotels.
 
-2. **Seasonal Insights:**  
-   - Highlighted the best months to visit specific destinations for cost savings.
-
-3. **Hotel Recommendations:**  
-   - Ranked hotels based on affordability and ratings.
 
