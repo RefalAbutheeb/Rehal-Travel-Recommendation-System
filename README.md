@@ -3,22 +3,37 @@
 ## Team Members 
 - **Refal Abutheeb** (Student ID: 443200792)
 
+---
+
 ## 1. Introduction  
 Traveling can be an overwhelming process, especially when trying to balance budget, timing, and preferences. "Rehal" is a smart travel recommendation system designed to simplify the decision-making process by providing personalized travel suggestions based on data. Whether users are looking for the best time to travel, affordable hotels, or practical itineraries, Rehal makes planning seamless and efficient.
 
 ---
 
 ## 2. Problem Statement  
-Travelers often struggle with:
-1. Identifying the most cost-effective travel options.
-2. Planning trips that align with their preferences and budget.
+Travelers often struggle with:  
+1. Identifying the most cost-effective travel options.  
+2. Planning trips that align with their preferences and budget.  
 3. Finding relevant and reliable information in one place.
 
 These challenges inspired the creation of "Rehal" to act as a personalized travel advisor that leverages data to offer actionable insights.
 
 ---
 
-## 3. Objectives  
+## 3. Scope  
+The scope of the Rehal Travel Recommendation System includes:
+- Analyzing flight, hotel, and user data to provide personalized travel recommendations.
+- Focusing on budget optimization, seasonal travel trends, and user preferences.
+- Processing structured travel data, excluding Arabic text or images.
+- Ensuring data quality through exploration and analysis.
+
+The system does **not** include:
+- Real-time travel booking or reservation features.
+- Integration with third-party travel services.
+
+---
+
+## 4. Objectives  
 - **Empower Travelers with Data-Driven Decisions:** Enable users to make smarter travel choices by providing detailed recommendations for destinations, flights, and accommodations based on analyzed data.
 - **Optimize Budget Management:** Help users plan their trips within a specific budget by offering insights into cost-effective travel options, including flights and hotels.
 - **Identify Seasonal Trends:** Provide clear guidance on the best times to travel, leveraging seasonal trends in flight and hotel pricing for better planning.
@@ -27,7 +42,7 @@ These challenges inspired the creation of "Rehal" to act as a personalized trave
 
 ---
 
-## 4. Dataset Overview  
+## 5. Dataset Overview  
 The dataset used for this project is sourced from **Kaggle** and simulates real-world corporate travel systems, focusing on flights and hotels.
 
 ### **Source:**  
@@ -86,7 +101,7 @@ The dataset used for this project is sourced from **Kaggle** and simulates real-
 
 ---
 
-## 5. Data Quality Summary  
+## 6. Data Quality Summary  
 1. **flights.csv**
    - **Missing Values:** No missing values.
    - **Duplicate Rows:** No duplicate rows.
@@ -104,7 +119,7 @@ The dataset used for this project is sourced from **Kaggle** and simulates real-
 
 ---
 
-## 6. Methodology  
+## 7. Methodology  
 1. **Data Exploration:**  
    - Understand the structure of the dataset (columns, data types, and ranges).
    - Identify trends, such as average costs for specific destinations and seasonal price variations.
@@ -120,5 +135,3 @@ The dataset used for this project is sourced from **Kaggle** and simulates real-
 4. **Recommendation System:**  
    - Build rules to recommend destinations, hotels, and flights.
    - Prioritize affordability, convenience, and travel preferences.
-
----
