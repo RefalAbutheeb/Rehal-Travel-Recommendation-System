@@ -1,0 +1,81 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+flights_data = pd.read_csv('flights.csv')
+hotels_data = pd.read_csv('hotels.csv')
+users_data = pd.read_csv('users.csv')
+
+# Visualizations
+
+# Histograms
+plt.figure(figsize=(10, 6))
+sns.histplot(users_data['age'], bins=30, kde=True)
+plt.title('Histogram of User Ages')
+plt.xlabel('Age')
+plt.ylabel('Frequency')
+plt.show()
+
+plt.figure(figsize=(10, 6))
+sns.histplot(flights_data['price'], bins=30, kde=True)
+plt.title('Histogram of Flight Prices')
+plt.xlabel('Price')
+plt.ylabel('Frequency')
+plt.show()
+
+plt.figure(figsize=(10, 6))
+sns.histplot(flights_data['time'], bins=30, kde=True)
+plt.title('Histogram of Flight Times')
+plt.xlabel('Time')
+plt.ylabel('Frequency')
+plt.show()
+
+plt.figure(figsize=(10, 6))
+sns.histplot(flights_data['distance'], bins=30, kde=True)
+plt.title('Histogram of Flight Distances')
+plt.xlabel('Distance')
+plt.ylabel('Frequency')
+plt.show()
+
+plt.figure(figsize=(10, 6))
+sns.histplot(hotels_data['price'], bins=30, kde=True)
+plt.title('Histogram of Daily Hotel Prices')
+plt.xlabel('Price per Day')
+plt.ylabel('Frequency')
+plt.show()
+
+plt.figure(figsize=(10, 6))
+sns.histplot(hotels_data['days'], bins=30, kde=True)
+plt.title('Histogram of Number of Days Stayed')
+plt.xlabel('Number of Days')
+plt.ylabel('Frequency')
+plt.show()
+
+# Box Plots
+plt.figure(figsize=(8, 5))
+sns.boxplot(y=flights_data['price'])
+plt.title('Box Plot of Flight Prices')
+plt.ylabel('Price')
+plt.show()
+
+plt.figure(figsize=(8, 5))
+sns.boxplot(y=hotels_data['price'])
+plt.title('Box Plot of Daily Hotel Prices')
+plt.ylabel('Price per Day')
+plt.show()
+
+# Bar Plots 
+plt.figure(figsize=(8, 5))
+sns.countplot(x='flightType', data=flights_data)
+plt.title('Bar Plot of Flight Types')
+plt.xlabel('Flight Type')
+plt.ylabel('Count')
+plt.show()
+
+plt.figure(figsize=(8, 5))
+sns.countplot(x='gender', data=users_data)
+plt.title('Bar Plot of User Genders')
+plt.xlabel('Gender')
+plt.ylabel('Count')
+plt.show()
