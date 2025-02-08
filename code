@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-# Define the path to the dataset folder relative to your project directory
+# Define the path to the dataset folder relative to the project directory
 dataset_dir = "Dataset"
 
 # Define the file paths for each CSV file
