@@ -1,0 +1,100 @@
+import os
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Define the path to the dataset folder
+dataset_dir = "Dataset"
+
+# Load datasets
+users = pd.read_csv(os.path.join(dataset_dir, "users.csv"))
+flights = pd.read_csv(os.path.join(dataset_dir, "flights.csv"))
+hotels = pd.read_csv(os.path.join(dataset_dir, "hotels.csv"))
+
+# Convert all column names to lowercase to ensure consistency
+users.columns = users.columns.str.strip().str.lower()
+flights.columns = flights.columns.str.strip().str.lower()
+hotels.columns = hotels.columns.str.strip().str.lower()
+
+# Print column names to debug potential issues
+print("Users Columns:", users.columns)
+print("Flights Columns:", flights.columns)
+print("Hotels Columns:", hotels.columns)
+
+# Descriptive Statistics
+## Users Dataset
+print("User Age Statistics:")
+age_mean = users['age'].mean()
+age_median = users['age'].median()
+age_variance = users['age'].var()
+age_std = users['age'].std()
+print(f"Mean: {age_mean}, Median: {age_median}, Variance: {age_variance}, Std Dev: {age_std}\n")
+
+## Flights Dataset
+print("Flight Price Statistics:")
+price_mean = flights['price'].mean()
+price_median = flights['price'].median()
+price_variance = flights['price'].var()
+price_std = flights['price'].std()
+print(f"Mean: {price_mean}, Median: {price_median}, Variance: {price_variance}, Std Dev: {price_std}\n")
+
+print("Flight Time Statistics:")
+time_mean = flights['time'].mean()
+time_median = flights['time'].median()
+time_variance = flights['time'].var()
+time_std = flights['time'].std()
+print(f"Mean: {time_mean}, Median: {time_median}, Variance: {time_variance}, Std Dev: {time_std}\n")
+
+print("Flight Distance Statistics:")
+distance_mean = flights['distance'].mean()
+distance_median = flights['distance'].median()
+distance_variance = flights['distance'].var()
+distance_std = flights['distance'].std()
+print(f"Mean: {distance_mean}, Median: {distance_median}, Variance: {distance_variance}, Std Dev: {distance_std}\n")
+
+## Hotels Dataset
+print("Hotel Price by Day Statistics:")
+hotel_price_mean = hotels['price'].mean()
+hotel_price_median = hotels['price'].median()
+hotel_price_variance = hotels['price'].var()
+hotel_price_std = hotels['price'].std()
+print(f"Mean: {hotel_price_mean}, Median: {hotel_price_median}, Variance: {hotel_price_variance}, Std Dev: {hotel_price_std}\n")
+
+print("Hotel Stay Duration Statistics:")
+stay_mean = hotels['days'].mean()
+stay_median = hotels['days'].median()
+stay_variance = hotels['days'].var()
+stay_std = hotels['days'].std()
+print(f"Mean: {stay_mean}, Median: {stay_median}, Variance: {stay_variance}, Std Dev: {stay_std}\n")
+
+# Visualizations
+sns.set(style="whitegrid")
+
+# Histograms
+fig, axes = plt.subplots(2, 3, figsize=(18, 10))
+sns.histplot(users['age'], bins=20, kde=True, ax=axes[0,0]).set(title='User Age Distribution')
+sns.histplot(flights['price'], bins=20, kde=True, ax=axes[0,1]).set(title='Flight Price Distribution')
+sns.histplot(flights['time'], bins=20, kde=True, ax=axes[0,2]).set(title='Flight Time Distribution')
+sns.histplot(flights['distance'], bins=20, kde=True, ax=axes[1,0]).set(title='Flight Distance Distribution')
+sns.histplot(hotels['price'], bins=20, kde=True, ax=axes[1,1]).set(title='Hotel Price Distribution')
+sns.histplot(hotels['days'], bins=20, kde=True, ax=axes[1,2]).set(title='Hotel Stay Duration Distribution')
+plt.tight_layout()
+plt.show()
+
+# Box Plots
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+sns.boxplot(y=flights['price'], ax=axes[0]).set(title='Flight Price Box Plot')
+sns.boxplot(y=hotels['price'], ax=axes[1]).set(title='Hotel Price Box Plot')
+plt.tight_layout()
+plt.show()
+
+# Summary of Findings
+summary = """
+Summary of Findings:
+1. User Age: The age distribution shows the most common age group using travel services.
+2. Flight Prices: Price distribution reveals common price ranges and potential anomalies.
+3. Flight Times and Distances: Patterns in durations and distances may indicate popular routes.
+4. Hotel Prices and Stay Durations: Data suggests typical spending per night and average trip lengths.
+"""
+print(summary)
